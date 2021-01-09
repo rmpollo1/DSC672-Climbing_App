@@ -1,0 +1,103 @@
+
+h1, h2, h3, div, p, a {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: lightsalmon;
+    font-style: italic;
+}
+
+a:hover {
+    color: darkmagenta;
+}
+
+.route-tile {
+    display: grid;
+    width: 100%;
+    height: 200px;
+    grid-template-columns: 10px 1fr 1fr 1fr 1fr 10px;
+    grid-template-rows: 10px 50px 30px 100px 10px;
+    grid-template-areas: 
+        ". .... .... ..... ..... ."
+        ". name name photo photo ." 
+        ". diff diff photo photo ."
+        ". loc  loc  photo photo ."
+        ". .... .... ....  ..... ."
+    ;
+    border-radius: 30px;
+    background-color: slategrey;
+}
+
+.name {
+    grid-area: name;
+}
+.diff {
+    grid-area: diff;
+}
+.photo {
+    grid-area: photo;
+}
+.loc {
+    grid-area: loc;
+}
+
+.route-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+}
+
+#main{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 10px 1fr 1fr 10px;
+    grid-template-rows: 10px 100px 50px 1fr;
+    gap: 10px; 
+    grid-template-areas: 
+        ". .... ........... ."
+        ". user user ."
+        ". past_title  rec_title  ."
+        ". past_routes rec_routes ."
+    ;
+}
+
+#left-box {
+    grid-area: user;
+}
+
+#past-routes {
+    display: grid;
+    grid-area: past_routes;
+    background-color:white;
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+    
+}
+
+#rec-routes {
+    display: grid;
+    grid-area: rec_routes;
+    background-color: white;
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+    
+}
+
+#rec_title {grid-area: rec_title;}
+#past_title {grid-area: past_title;}
+
+img {
+    /*min-width: 100%;*/
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    border-radius: 10px;
+}
